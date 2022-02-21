@@ -1,0 +1,14 @@
+{
+  "RequestLevel": "A number is guessed from 0 to 100 inclusive. Your task is to guess it.\nChoose your game level (1 - heavy (8 attempts), 2 - medium (9 attempts), 3 - easy (10 attempts)):",
+  "Win": "YOU WIN !!!",
+  "Lose": "YOU LOSE !!!\nDesired number was ##. Try it again, please. ",
+  "ExceptionLevel": "You select incorrect variant.",
+  "ExceptionData": "You enter wrong data",
+  "RequestMove": "You have ## attempts.\nEnter your number, please:",
+  "ResultMoveIsLess": "Your number is less.",
+  "ResultMoveIsGreater": "Your number is greater.",
+  "RequestNewGame": "If you want play again, enter 1 please. Else enter 0.",
+  "LevelChosen": "You have chosen ## level game. Good luck!",
+  "PlaceVariable": "##",
+  "StopRepeat": "Replay stopped. Have a nice day!"
+}
