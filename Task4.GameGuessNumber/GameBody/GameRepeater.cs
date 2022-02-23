@@ -1,4 +1,6 @@
-﻿namespace Task4.GameGuessNumber;
+﻿using Task4.GameGuessNumber.ConfigMessage;
+
+namespace Task4.GameGuessNumber.GameBody;
 
 internal class GameRepeater : BasisGame
 {

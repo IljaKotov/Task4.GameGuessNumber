@@ -1,28 +1,34 @@
 using NUnit.Framework;
-using Task4.GameGuessNumber;
+using Task4.GameGuessNumber.GameBody;
 
 namespace Task4.GameGuessNumberTests;
 
 public class GetResultTests
 {
 	[Test]
-	public void GetResult_Null_InvalidInputDataException()
+	public void GetResult_Null_MessageExceptionData()
 	{
+		const int targetNumber = 50;
 		const string expectedNumber = null!;
 
-		var testGame = new BasisGame();
+		var testGame = new BasisGame(targetNumber);
+		var expectedMessage = testGame.Messages!.ExceptionData;
 
-		Assert.Catch<InvalidInputDataException>(() => testGame.GetResult(expectedNumber!));
+		var actualMessage = testGame.GetResult(expectedNumber!);
+		Assert.AreEqual(expectedMessage, actualMessage);
 	}
 
 	[Test]
-	public void GetResult_InvalidInputData_InvalidInputDataException()
+	public void GetResult_InvalidInputData_MessageExceptionData()
 	{
-		const string expectedNumber = "4a";
+		const int targetNumber = 50;
+		const string expectedNumber = "wwe12";
 
-		var testGame = new BasisGame();
+		var testGame = new BasisGame(targetNumber);
+		var expectedMessage = testGame.Messages!.ExceptionData;
 
-		Assert.Catch<InvalidInputDataException>(() => testGame.GetResult(expectedNumber));
+		var actualMessage = testGame.GetResult(expectedNumber!);
+		Assert.AreEqual(expectedMessage, actualMessage);
 	}
 
 	[Test]

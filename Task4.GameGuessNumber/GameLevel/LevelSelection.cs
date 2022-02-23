@@ -1,4 +1,7 @@
-﻿namespace Task4.GameGuessNumber;
+﻿using Task4.GameGuessNumber.ConfigMessage;
+using Task4.GameGuessNumber.GameBody;
+
+namespace Task4.GameGuessNumber.GameLevel;
 
 internal class LevelSelection : BasisGame
 {
@@ -36,6 +39,6 @@ internal class LevelSelection : BasisGame
 		if ((parseLevel > LevelsConfig.ChoiceMin) & (parseLevel < LevelsConfig.ChoiceMax))
 			return $"{_message!.LevelChosen!.Replace(_message.PlaceVariable!, levelName)}";
 
-		throw new InvalidInputDataException(_message!.ExceptionLevel);
+		return _message!.ExceptionData;
 	}
 }

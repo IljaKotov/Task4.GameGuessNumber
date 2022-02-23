@@ -1,4 +1,8 @@
-﻿namespace Task4.GameGuessNumber;
+﻿using Task4.GameGuessNumber.ConfigMessage;
+using Task4.GameGuessNumber.GameDisplay;
+using Task4.GameGuessNumber.GameLevel;
+
+namespace Task4.GameGuessNumber.GameBody;
 
 internal class GameManager
 {
@@ -17,9 +21,22 @@ internal class GameManager
 
 	internal void Start()
 	{
-		StartOneMove(_level, _messages!.RequestLevel!);
+		ChooseLevel();
 		RepeatMove();
 		CheckLoseCondition();
+	}
+
+	private void ChooseLevel()
+	{
+		while (true)
+		{
+			StartOneMove(_level, _messages!.RequestLevel);
+
+			if (_resultMove == _messages!.ExceptionData)
+				continue;
+
+			break;
+		}
 	}
 
 	private void StartOneMove(BasisGame workingObject, string message, int variable = default)
@@ -33,7 +50,12 @@ internal class GameManager
 	private void RepeatMove()
 	{
 		for (; (_counterMoves != _level.LimitMove) & (_resultMove != _messages!.Win); _counterMoves++)
+		{
 			StartOneMove(_game, _messages!.RequestMove!, _level.LimitMove - _counterMoves);
+
+			if (_resultMove == _messages!.ExceptionData)
+				_counterMoves--;
+		}
 	}
 
 	private void CheckLoseCondition()

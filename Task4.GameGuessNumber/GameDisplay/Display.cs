@@ -1,4 +1,4 @@
-﻿namespace Task4.GameGuessNumber;
+﻿namespace Task4.GameGuessNumber.GameDisplay;
 
 internal static class Display
 {
@@ -22,9 +22,16 @@ internal static class Display
 	{
 		var answer = Console.ReadLine();
 
+		return CheckNull(answer!);
+	}
+
+	private static string CheckNull(string? answer)
+	{
 		if (answer != null)
 			return answer;
 
-		throw new InvalidInputDataException("You enter wrong data.");
+		Print("You enter wrong data. Try it again, please:");
+
+		return GetAnswer();
 	}
 }

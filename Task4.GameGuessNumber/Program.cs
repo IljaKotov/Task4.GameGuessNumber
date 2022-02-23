@@ -1,4 +1,6 @@
-﻿using Task4.GameGuessNumber;
+﻿using Task4.GameGuessNumber.ConfigMessage;
+using Task4.GameGuessNumber.GameBody;
+using Task4.GameGuessNumber.GameDisplay;
 
 var gameRestart = new GameRepeater();
 var message = ConfigLoader.LoadJson();

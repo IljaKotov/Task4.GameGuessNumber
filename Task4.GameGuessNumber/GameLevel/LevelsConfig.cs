@@ -1,4 +1,4 @@
-﻿namespace Task4.GameGuessNumber;
+﻿namespace Task4.GameGuessNumber.GameLevel;
 
 internal record LevelsConfig
 {

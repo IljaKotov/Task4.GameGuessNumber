@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Task4.GameGuessNumber;
+namespace Task4.GameGuessNumber.ConfigMessage;
 
 internal static class ConfigLoader
 {
